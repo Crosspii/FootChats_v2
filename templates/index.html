@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home Page - Foot Chats</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/favicon/favicon-32x32.png" rel="icon">
+  <link href="/static/img/favicon/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <a href="/" class="logo me-auto"><img src="/static/img/logo.png" alt="Football Chat" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        {% if session["user_id"] %}
+          <ul>
+            <li><a class="getstarted scrollto" href="/"><img src="/static/img/homepage.jpg" class="icon" alt=""></a></li>
+            <li><a class="getstarted scrollto" href="/logout">Log Out</a></li>
+          </ul>
+        {% else %}
+          <ul>
+            <li><a class="getstarted scrollto" href="/register">Register</a></li>
+            <li><a class="getstarted scrollto" href="/login">Login</a></li>
+          </ul>
+        {% endif %}
+      <i class="bi mobile-nav-toggle bi-list"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center bglol ">
+
+    <div class="container bg-image">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Foot Chats, the heart of football</h1>
+          <h2>Celebrate victories, discuss match strategies, and share the highs and lows of the beautiful game.</h2>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="/static/img/lion.png" class="img-hero " alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= see thrue Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row">
+          <div class="col-lg-15 text-center ">
+            <h3>Chat Rooms</h3>
+            <p> Choose your favourite Club And Engage in lively discussions and debates with fans who share your passion for your club.</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Clubs ======= -->
+    <section id="clubs" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Clubs</h2>
+        </div>
+
+        <div class="row">
+
+          <swiper-container class="mySwiper" navigation="true">
+            
+            <swiper-slide>
+              <a href="/mancity">
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 slidepadd" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon-box text-center ">
+                    <div class="pic"><img src="/static/img/clubs/manc.png" alt=""></div>
+                    <hr>
+                    <div class="text-center"><h2>Manchester City</h2></i></div>
+                  </div>
+                </div>
+              </a>
+            </swiper-slide>
+            
+            <swiper-slide>
+              <a href="/spurs">
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 slidepadd" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon-box text-center">
+                    <div class="pic"><img src="/static/img/clubs/tott.png" alt=""></div>
+                    <hr>
+                    <div class="text-center"><h2>Tottenham Hotspur</h2></i></div>
+                  </div>
+              </div>
+            </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/arsenal">
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon-box text-center">
+                    <div class="pic"><img src="/static/img/clubs/arsenal.png" alt=""></div>
+                    <hr>
+                    <div class="text-center"><h2>Arsenal</h2></i></div>
+                  </div>
+                </div>
+              </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/liverpool">
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="icon-box text-center">
+                    <div class="pic"><img src="/static/img/clubs/liver.png" alt=""></div>
+                    <hr>
+                    <div class="text-center"><h2>Liverpool</h2></i></div>
+                  </div>
+                </div>
+              </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/aston-villa">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/av.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Aston Villa</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/brighton">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/brighton.png"  alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Brighton</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/west-ham">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/West Ham.png"  alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>West Ham United</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/newcastle">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/Newcastle.png"  alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Newcastle</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/crystal-palace">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/Crystal Palace.png"  alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Crystal Palace</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/man-utd">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/Manchester United.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Manchester United</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/chelsea">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/chelsea.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Chelsea</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/fulham">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/Fulham.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Fulham</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/nott'm-forest">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/Nottin.png"  alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Nottingham Forest</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/wolves">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/Wolve.png"  alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Wolverhampton</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/brentford">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/Brentford.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Brentford</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/everton">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/everton.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Everton</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/luton">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/luton.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Luton Town</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+
+            <swiper-slide>
+              <a href="/burnley">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/burnley.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Burnley</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/bournemouth">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/Bournemouth.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>AFC Bournemouth</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+            <swiper-slide>
+              <a href="/sheffield-utd">
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 slidepadd" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box text-center">
+                  <div class="pic"><img src="/static/img/clubs/sheffield-utd.png" alt=""></div>
+                  <hr>
+                  <div class="text-center"><h2>Sheffield United</h2></i></div>
+                </div>
+              </div>
+              </a>
+            </swiper-slide>
+
+          </swiper-container>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= table logo ======= -->
+    <section id="clients" class="clients ">
+      <div class="container">
+        <img src="/static/img/pl.png" class="img-fluid animated" alt="">
+      </div>
+    </section><!-- End table logo -->
+
+
+    <!-- ======= table ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="fwp-embed long" data-font-family="Poppins" data-font-size="20px" data-border-color="#340040" data-heading-color="#340040" data-url="premier-league/league-table"  ></div>
+        <script src="https://www.footballwebpages.co.uk/embed.js" defer></script>
+
+      </div>
+    </section><!-- End table -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Creator</h2>
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-center">
+              <div class="pic"><img src="/static/img/me.JPG" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Aymen Hommani</h4>
+                <span>Software Engineer</span>
+                <p>Hello! I'm excited to share this Webapp that I created as my CS50 final project.</p>
+                <div class="social">
+                  <a href="https://twitter.com/crosspie_"><i class="ri-twitter-fill"></i></a>
+                  <a href="https://www.instagram.com/aymen_667_/"><i class="ri-instagram-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/ayman-hommani-86383018b/"> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <a href="/" class="logo me-auto"><img src="/static/img/logo.png" alt="Football Chat" class="img-fluid"></a>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/login">Login</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/logout">Logout</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links" hidden>
+            <h4>My Social Networks</h4>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Foot Chats</span></strong>
+      </div>
+      <div class="credits" hidden>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

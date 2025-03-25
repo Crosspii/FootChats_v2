@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log in
+{% endblock %}
+
+{% block main %}
+<main id="main" class="bglol">
+    <div id="card" >
+        <div class="col-sm-6 d-flex mx-auto ">
+            <div class="card mx-auto"  style="border-radius: 1rem;max-height: 430px;">
+                <div class="row g-0 " >
+                <div  class="col-md-6 col-lg-5 d-none d-md-block " style="max-height: 430px;">
+                    <img src="/static/img/login-pl.jpg"
+                    alt="login form"  class="img-fluid " style="border-radius: 1rem 0 0 1rem;" />
+                </div>
+                <div class="col-md-6 col-lg-7 d-flex  align-items-center " >
+                    <div class="card-body p-4 p-lg-5 text-black  ">
+    
+                        <form action="/login" method="post">
+        
+                            <div class="d-flex align-items-center mb-3 pb-1">
+                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                            <span  class="h1 fw-bold mb-0" style="letter-spacing: 1px;">Log in</span>
+                            </div>
+                            {% if error %}
+                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;color: red;">{{error}}</h5>
+                            {% endif %}
+                            <div class="form-outline mb-4">
+                            <input type="text" id="username" name="username" maxlength="22" placeholder="Username" autofocus autocomplete="off" class="form-control form-control-lg" />
+                            </div>
+        
+                            <div class="form-outline mb-4">
+                            <input type="password" id="password" name="password" placeholder="Password"  class="form-control form-control-lg" />
+                            </div>
+        
+                            <div class="pt-1 mb-4">
+                            <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                            </div>
+        
+                            <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="/register"
+                                style="color: #393f81;">Register here</a></p>
+                        </form>
+    
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</main>
+{% endblock %}

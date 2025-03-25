@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  {{ chat }} Room
+{% endblock %}
+
+{% block main %}
+<main id="main" class="bglol">
+    <div class="container py-5 ">
+
+      <div class="row d-flex justify-content-center hight ">
+        <div class="col-md-10 col-lg-8 col-xl-6 my-auto ">
+
+          <div class="card" id="chat2">
+            <div class="card-header align-items-center p-3 {{ code }}">
+              <h5 class="text-center">{{ chat }}'s chat</h5>
+            </div>
+            <div class="card-body ps ps--active-y" id="messages" data-mdb-perfect-scrollbar="true" style="position: relative; height: 60vh">
+            {% for msg in messages %}
+                <div class="d-flex flex-row justify-content-start">
+                  <strong class="chat_name">{{ msg.user_id }}:</strong>
+                  <div>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">{{ msg.content }}</p>
+                    <p class="small ms-3 mb-3 rounded-3 text-muted">{{ msg.created_at }}</p>
+                  </div>
+                </div>
+            {% endfor %}
+            </div>
+
+
+            <div class="ps__rail-x" ><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" ><div class="ps__thumb-y" tabindex="0" style="top: 10px; height: 10px;"></div></div></div>
+            <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+              <input type="text" class="form-control form-control-lg" id="message" name="message" placeholder="Type message">
+              <button class="btn btn-primary" type="button" name="send" id="send-btn" onClick="sendMessage()" style="margin: 10px;">
+                <img src="/static/img/favicon/paper-plane-solid.svg" alt="Send Message" style="width: 16px; height: 16px;">
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  
+    </div>
+    <script type="text/javascript">
+      var socketio = io();
+    
+      const messages = document.getElementById("messages");
+    
+      const createMessage = (name, msg) => {
+        if (msg === "has entered the room") {
+        const content = `
+            <div class="divider d-flex align-items-center mb-4">
+            <p class="text-center mx-3 mb-0" style="color: #a2aab7;">${name} has entered the room</p>
+            </div>
+        `;
+        messages.innerHTML += content; 
+        } else if (msg === "has left the room") {
+        const content = `
+            <div class="divider d-flex align-items-center mb-4">
+            <p class="text-center mx-3 mb-0" style="color: #a2aab7;">${name} has left the room</p>
+            </div>
+        `;
+        messages.innerHTML += content;
+        } else {
+        const content = `
+        <div class="d-flex flex-row justify-content-start">
+          <strong class="chat_name">${name} :</strong>
+          <div>
+            <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">${msg}</p>
+            <p class="small ms-3 mb-3 rounded-3 text-muted">
+              ${new Date().toLocaleString()}
+            </p>
+          </div>
+        </div>
+        `;
+        messages.innerHTML += content;
+        var chatHistory = document.getElementById("messages");
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+      };
+    
+      socketio.on("message", (data) => {
+        createMessage(data.name, data.message);
+      });
+    
+      const sendMessage = () => {
+        const message = document.getElementById("message");
+        if (message.value == "") return;
+        socketio.emit("message", { data: message.value });
+        message.value = "";
+      };
+    </script>
+ 
+    
+</main><!-- End #main -->
+{% endblock %}
