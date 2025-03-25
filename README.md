@@ -1,4 +1,4 @@
-# FootChats — HarvardX CS50 final project
+# FootChats —
 
 ### Video Demo: https://youtu.be/m1wHbyA_GgA
 ![Untitled-Thumbnail](https://github.com/Crosspii/FootChats/assets/141479352/f2f0cf30-0f26-4504-9b21-72fa90eecbd7)
